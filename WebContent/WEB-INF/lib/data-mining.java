@@ -1,3 +1,5 @@
+// Describes how we take an input CSV file, preprocess it and then predict for missing values of energy using a pre-made classifier
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -8,7 +10,7 @@ import weka.core.Instances;
 
 
 
-public class second {
+public class data-mining {
 	
 	public static void main(String[] args) throws IOException, Exception{
 		System.out.println(learn("/home/max/Desktop/codejam/simple_input.csv"));
@@ -19,7 +21,7 @@ public class second {
 		File directory = new File (".");
 		
 		CSVLoader loader = new CSVLoader();
-
+		// Preprocessing
 		loader.setSource(new File(string));
 		loader.setDateAttributes("1");
 		loader.setDateFormat("yyyy-MM-dd'T'HH:mm-ss':00'");
@@ -31,7 +33,8 @@ public class second {
 		}
 
 		Instances labeled = new Instances(unlabeled);
-
+		
+		// Load the classifier. We trained this on the data set provided using the M5P algorithm
 		SerializedClassifier my_classifier = new SerializedClassifier();
 		my_classifier.setModelFile(new File("C:/Code Jam 2013/test3.model"));
 
