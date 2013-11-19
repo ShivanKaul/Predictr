@@ -1,4 +1,5 @@
 // Describes how we take an input CSV file, preprocess it and then predict for missing values of energy using a pre-made classifier
+// The file paths for the input csv file and the classifier are hard-coded for Shivan's machine; once we get the web side of it running, we'll change this (obviously)
 
 import java.io.BufferedWriter;
 import java.io.File;
